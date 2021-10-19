@@ -309,3 +309,25 @@ footer ul li a:hover{
 	margin-top: 20px;
 	margin-bottom: 30px;
 }
+
+/* FAQ Section */
+
+.accordion-button.collapsed{
+	font-size: 1.5rem;
+	color:#8d8d8d;
+	letter-spacing: 0.5px;
+}
+
+/* Nosotros section */
+.card-title{
+	margin-top: 10px;
+}
+h6.card-subtitle{
+	margin-top: 10px;
+}
+ul li.list-inline-item{
+	list-style-type: none;
+}
+ul li.list-inline-item a{
+	color:#222;
+}
