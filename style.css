@@ -331,3 +331,9 @@ ul li.list-inline-item{
 ul li.list-inline-item a{
 	color:#222;
 }
+
+/* Login section */
+.d-grid .btn.btn-primary{
+	border-color: #33c9b9;
+	background-color: #33c9b9;
+}
