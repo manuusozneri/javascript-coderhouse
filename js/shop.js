@@ -74,3 +74,12 @@ function addItemToCart(img, album, price){
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
 }
+
+document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchase)
+function purchase () {
+    alert('Gracias por tu compra')
+    var cartItems = document.getElementsByClassName('cart-items')[0];
+    while (cartItems.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild);
+    }
+}
