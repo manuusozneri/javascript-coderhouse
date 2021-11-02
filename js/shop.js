@@ -1,5 +1,5 @@
 
-
+/* remover los items del carrito */
 var removeButton = document.getElementsByClassName('btn-danger');
 for (var i = 0; i < removeButton.length; i++) {
     
@@ -11,25 +11,29 @@ function removeCartItem(event) {
     let buttonClick = event.target;
     let father = buttonClick.parentNode.parentNode
     buttonClick.parentNode.parentNode.remove()
-    updateTotals()
+    updateCartTotal()
 }
 
-function updateTotals() {
-    var cartItemsContainer = document.getElementsByClassName('cart-items')[0]
-    var cartRows = cartItemsContainer.getElementsByClassName('cart-row')
-    for (var i = 0; i < cartRows.length; i++){
-        var row = cartRows[i]
-        var priceElement = row.getElementsByClassName('cart-price')[0]
-        var quantityElement = row.getElementsByClassName('cart-quantity-input')[0]
-        console.log(priceElement, quantityElement);
-        var price = parseFloat(priceElement.innerText.replace('$', ''));
-        var quantity = quantityElement
+/* se actualizan los precios */
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
     }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
 
 
     
-
+/* se agregan los items al carrito */
 var buyButton = document.getElementsByClassName('buyButton')
 
 for (let button of buyButton){
@@ -43,12 +47,11 @@ function addToCartClicked(event) {
     let img = father.querySelector('img').src;
     let album = father.querySelector('h1').textContent;
     let price = father.querySelector('p').textContent;
-
-
-    console.log(img, album, price);
     addItemToCart(img, album, price)
+    updateCartTotal()
 }
 
+/* se impide que se agreguen items duplicados */
 function addItemToCart(img, album, price){
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
@@ -73,8 +76,10 @@ function addItemToCart(img, album, price){
     cartRow.innerHTML = cartRowContent
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    updateCartTotal()
 }
 
+/* se simula una compra */
 document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchase)
 function purchase () {
     alert('Gracias por tu compra')
@@ -82,4 +87,5 @@ function purchase () {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild);
     }
+    updateCartTotal()
 }
