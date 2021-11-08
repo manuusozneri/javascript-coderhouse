@@ -356,7 +356,7 @@ ul li.list-inline-item a{
 .cart-item{
 	width: 44%;
 }
-.cart-price{
+.cart-price, .cart-price-one{
 	width: 20%;
 	font-size: 1.4rem;
 
