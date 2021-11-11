@@ -1,23 +1,109 @@
+
 *{
-    padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    font-family: 'Dongle', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
-ul{
-	list-style: none;	
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgb(238, 238, 238);
+}
+.logo {
+    margin-top: 8px;
+	letter-spacing: 2px;
+	font-weight:bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+	margin-top: 10px;
+}
+.nav-links li{
+    list-style-type: none;
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    background-color: black;
+    height: 3px;
+    width: 25px;
+    margin: 5px;
+}
+@media screen and (max-width: 1100px){
+    .nav-links{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+    }
+}  
+    
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0%;
+        height: 92vh;
+        top: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        background-color: rgb(238, 238, 238);
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+		
+    }
+    .burger{
+        display:block;
+    }
+    
+}
+.nav-active{
+    transform: translateX(0%)
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
+
 /* header */
-.nav-icon{
-	font-size:18px
-}
-a.navbar-brand {
-	font-size: 25px;
-	font-weight: 700;
-}
-a.nav-link{
-	font-weight: 600;
-}
 .item.header {
 	background-image:url(./assets/background_banner.jpg);
 	background-repeat:no-repeat;
@@ -91,6 +177,7 @@ a.nav-link{
 	padding-top:30px;
 }
 .numbertext {
+	letter-spacing: 2px;
 	font-weight:700;
 	font-size:20px;
 	line-height:38px;
