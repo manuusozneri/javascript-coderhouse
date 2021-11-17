@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(#a8c0ff, #3f2b96);
+    font-family: 'Dongle', sans-serif;
+	font-family: 'Poppins', sans-serif;
+    color: hsl(0, 0%, 96%);
+}
+
+.location,.temperature{
+    display: flex;
+    justify-content: space-around;
+    height: 35vh;
+    width: 50%;
+    align-items: center;
+}
+.location{
+    font-size: 2rem;
+}
+.location input[type="text"]{
+    width: 90%;
+    height: 10%;
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+}
+.location button{
+    height: 2.5em;
+    width: 2.5em;
+    border: none;
+    border-radius: 3em;
+    margin-right: 20px;
+    font-size: 15px;
+}
+@media screen and (max-width:760px) {
+    .location button{
+        margin-left: 20px;
+        border-radius: 50%;
+        height: 2.3em;
+    }
+}
+.location button {
+    cursor: pointer;
+}
+.temperature{
+    flex-direction: column;
+}
+.temperature-degree{
+    font-weight: bold;
+    font-size: 4rem;
+}
+.temperature-description{
+    font-size: 1rem;
+}
+.city-name, .country-name{
+    margin-bottom: 20px;
+}
+.city-name{
+    margin-top: -80px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.country-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -20px;
+}
+.temperature-main{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.temperature-description{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+}
+.icon-weather img{
+    height: 100px;
+    width: 100px;
+}
+.subtitle, .headline{
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+.redirect{
+    margin-top: 20px;
+}
+a{
+    text-decoration: none;
+    color: hsl(0, 0%, 96%);
+}

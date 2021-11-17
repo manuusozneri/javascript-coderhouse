@@ -14,7 +14,7 @@ nav{
 }
 .logo {
     margin-top: 8px;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	font-weight:bold;
     font-size: 18px;
     text-transform: uppercase;
@@ -105,9 +105,7 @@ nav{
 
 /* header */
 .item.header {
-	background-image:url(./assets/background_banner.jpg);
-	background-repeat:no-repeat;
-	background-size:cover;
+	background: linear-gradient(#a8c0ff, #3f2b96);
 }
 .text-homeimage{
 	color:#fff;
@@ -188,7 +186,7 @@ nav{
 	margin-top: 13px;
 }
 .numberstep {
-	background-color:#F28574;
+	background-color:#4a3996;
 	border-radius:50%;
 	color:#fff;
 	margin-right:4px;
@@ -265,10 +263,10 @@ section.item.content a{
 	height: 45px;
 }
 .overlay button{ 
-	background-color: #F28574;
+	background-color: #4a3996;
 }
 .overlay button:hover{ 
-	background-color: #f0a094;
+	background-color: #4a3996;
 }
 .overlay img {
 	width: 100%;
@@ -278,7 +276,7 @@ section.item.content a{
 .homebrowseitems {
 	text-decoration:none;
 	display:inline-block;
-	background-color:#F28574;
+	background-color:#4a3996;
 	font-weight:700;
 	font-size:20px;
 	border:0;
